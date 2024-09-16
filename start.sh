@@ -1,6 +1,17 @@
 #!/bin/bash
-docker-compose -f ./81/docker-compose.yml up -d
-docker-compose -f ./82/docker-compose.yml up -d
-docker-compose -f ./83/docker-compose.yml up -d
-docker-compose -f ./84/docker-compose.yml up -d
-docker-compose -f ./85/docker-compose.yml up -d
+
+if command -v podman-compose &>/dev/null; then
+    docker_compose_command='podman-compose'
+else
+    docker_compose_command='docker-compose'
+fi
+
+start() {
+    $docker_compose_command -f ./8001/docker-compose.yml up -d
+    $docker_compose_command -f ./8002/docker-compose.yml up -d
+    $docker_compose_command -f ./8003/docker-compose.yml up -d
+    $docker_compose_command -f ./8004/docker-compose.yml up -d
+    $docker_compose_command -f ./8005/docker-compose.yml up -d
+}
+
+start

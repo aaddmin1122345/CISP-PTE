@@ -10,26 +10,12 @@ CISP-PTE 考试环境源码
 ./stop 关闭
 ```
 
-sql注入
 
-```bash
-docker container exec -it sqlid /bin/bash
-./root/sql.sh
-```
 
 
 ## SQL注入
 
-修改数据库账户密码，自行创建数据库
-
-```sql
-create database 2web;
-use 2web;
-
-create table article(id int(11) primary key,title varchar(255) null,content varchar(255) null,author varchar(255) null)character set utf8;
-
-insert into article values( '1', 'SQL注入' , '所谓SQL注入，就是通过把SQL命令插入到Web表单提 交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的SQL命令', 'admin');
-```
+<br/>
 
 ![截图](./image/4a14e2fcda555e06bbd81eac7ca8607f.png)
 <br/>
